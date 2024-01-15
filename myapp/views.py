@@ -18,7 +18,6 @@ def create_view(request):
     
     return render(request, "create_view.html", context)
 
-@csrf_protect
 def list_view(request):
     # dictionary for initial data with 
     # field names as keys
@@ -29,7 +28,6 @@ def list_view(request):
          
     return render(request, "list_view.html", context)
 
-@csrf_protect
 def detail_view(request, id):
     # dictionary for initial data with 
     # field names as keys
