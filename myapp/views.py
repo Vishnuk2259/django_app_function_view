@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_protect
 
 from .models import AppModel
 from .forms import AppForm
 
+@csrf_protect
 def create_view(request):
     
     context = {}
@@ -16,6 +18,7 @@ def create_view(request):
     
     return render(request, "create_view.html", context)
 
+@csrf_protect
 def list_view(request):
     # dictionary for initial data with 
     # field names as keys
@@ -26,6 +29,7 @@ def list_view(request):
          
     return render(request, "list_view.html", context)
 
+@csrf_protect
 def detail_view(request, id):
     # dictionary for initial data with 
     # field names as keys
@@ -33,7 +37,8 @@ def detail_view(request, id):
  
     # add the dictionary during initialization
     context["data"] = AppModel.objects.get(id = id)
-    
+
+@csrf_protect    
 def update_view(request, id):
     # dictionary for initial data with 
     # field names as keys
@@ -56,6 +61,7 @@ def update_view(request, id):
  
     return render(request, "update_view.html", context)
 
+@csrf_protect
 def delete_view(request, id):
     # dictionary for initial data with 
     # field names as keys
