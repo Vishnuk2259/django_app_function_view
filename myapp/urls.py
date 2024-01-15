@@ -7,7 +7,7 @@ urlpatterns = [
     path('<id>/', views.detail_view, name='detail_list'),
     path('<id>/delete/', views.delete_view, name='delete'),
     path('<id>/update/', views.update_view, name='update'),
-    path('', views.list_view, name='home') 
-    
+    path('', views.list_view),
+    path('home', views.NewApp, name = 'home'),
 ]
 

@@ -4,6 +4,12 @@ from django.views.decorators.csrf import csrf_protect
 
 from .models import AppModel
 from .forms import AppForm
+from django.http import HttpResponse
+
+def NewApp (request) :
+ 
+    return HttpResponse("Hello Geeks")
+
 
 @csrf_protect
 def create_view(request):
@@ -35,6 +41,8 @@ def detail_view(request, id):
  
     # add the dictionary during initialization
     context["data"] = AppModel.objects.get(id = id)
+    
+    return render(request, "detail_view.html", context)
 
 @csrf_protect    
 def update_view(request, id):

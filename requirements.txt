@@ -4,8 +4,12 @@ Django==5.0.1
 django-heroku==0.3.1
 django-tastypie==0.14.6
 djangorestframework==3.14.0
+gunicorn==21.2.0
+packaging==23.2
 psycopg2==2.9.9
+psycopg2-binary==2.9.9
 python-dateutil==2.8.2
+python-decouple==3.8
 python-mimeparse==1.6.0
 pytz==2023.3.post1
 six==1.16.0
